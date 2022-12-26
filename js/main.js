@@ -39,7 +39,7 @@ const desayuno = new Producto(1,"Desayuno minicakes", 1800, 10 );
 const torta = new Producto(2,"torta", 3800,  20 );
 const tartaArandanos = new Producto(3,"tarta de arandanos", 2800, 5 );
 const tarta = new Producto(4, "tarta de lemon pie", 3000,12);
-const tortaPionono = new Producto(6, "torta de pionono con frutas", 3500, 5);
+const tortaPionono = new Producto(6, "torta de pionono", 3500, 5);
 const crumble = new Producto(7, "crumble de manzana", 3000,10);
 
 
@@ -80,8 +80,8 @@ const carrito = [];
 function pasomenu(){
   pasoMenu = false;
   while(pasoMenu === false){
-    menuPrincipal = prompt("Tienda online Amélie pasteleria, \nQue desea llevar : \n-Desayuno minicakes : $1800 \n-Tarta de lemon pie : $2800 \n-Torta tiramisú : $3800 \n-Tarta de arandanos : $2800 \n-Torta de pionono : $3500 \n-Crumble de manzana : $3000.\nPara salir ponga fin")
-    if((menuPrincipal === "Desayuno minicakes") || (menuPrincipal === "Torta de pionono") || (menuPrincipal === "Tarta de arandanos") || (menuPrincipal === "Tarta de lemon pie") || (menuPrincipal === "Torta de tiramisu") || (menuPrincipal === "Crumble de manzana")){
+    menuPrincipal = prompt("Tienda online Amélie pasteleria, \nQue desea llevar : \n-Desayuno minicakes : $1800 \n-Tarta de lemon pie : $2800  \n-Tarta de arandanos : $2800 \n-Torta de pionono : $3500 \n-Crumble de manzana : $3000.\nPara salir ponga fin")
+    if((menuPrincipal === "Desayuno minicakes") || (menuPrincipal === "Torta de pionono") || (menuPrincipal === "Tarta de arandanos") || (menuPrincipal === "Tarta de lemon pie") || (menuPrincipal === "Crumble de manzana")){
       pasoMenu = true
       carritoCompras()
       break
@@ -119,7 +119,17 @@ function pasocantidad(){
         pasoCantidad = true
         precio= tarta.precio;
         comida = tarta
-      }
+      } 
+        else if(menuPrincipal === "Tarta de arandanos"){
+          pasoCantidad = true
+          precio =tartaArandanos.precio
+          comida =tartaArandanos
+        }
+        else if(menuPrincipal === "Crumble de manzana"){
+          pasoCantidad = true
+          precio = crumble.precio
+          comida = crumble
+        }
       comida.disponible(cantidad)
       repetir()
     }
