@@ -53,6 +53,7 @@ catalogoProductos.push(tarta)
 catalogoProductos.push(tortaPionono)
 catalogoProductos.push(crumble) 
 
+
 //console.log(catalogoProductos)
 
 function repetir(){
@@ -187,3 +188,28 @@ let persona2 = parseInt(prompt("indique precio esperado a encontrar"))
 const listaEncontrada= buscarxPrecio(catalogoProductos, persona2)
 
 console.log(listaEncontrada)
+
+
+
+
+//btncatalogo
+
+function botonesCatalogo(array){
+  for (const producto of array) {
+      const botonId = `btn-catalogo-${producto.id}`;
+      const botonNodo = document.getElementById(botonId);
+      botonNodo.addEventListener("click", () => {
+      const productoCarrito = {
+          nombre: producto.nombre,
+          idCarrito: contadorCarrito,
+          precio: producto.precio,
+      
+      };
+      contadorCarrito += 1;
+      carrito.push(productoCarrito);
+      console.log(productoCarrito)
+      guardarEnLS(carrito)
+      mostrarCarrito(carrito)
+      });
+  }
+}
