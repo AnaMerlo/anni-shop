@@ -22,10 +22,9 @@ else{
 
 function Producto(id, nombre, precio, cantidad){
     this.id = id;
-    this.nombre = nombre.toUpperCase();
+    this.nombre = nombre;
     this.precio = parseFloat(precio);
     this.cantidad = parseInt(cantidad);
-    
 }
 
     const vestidoB = new Producto(1,"Vestido Bordo", 4500, 1);
@@ -158,7 +157,7 @@ crearHTML(catalogoProductos)
 
 function buscadorCategorias(arr, filtro){
     const encontrado = arr.filter((el)=>{
-        return el.nombre.includes(filtro.toUpperCase());
+        return el.nombre.includes(filtro);
     }) 
         return encontrado;
 }
