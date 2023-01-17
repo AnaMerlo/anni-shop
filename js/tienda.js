@@ -85,7 +85,7 @@ function crearHTML(array){
     for (const producto of array) {
         html =
         `<div class="section__div  col-md-3">
-        <img src="./assets/img/${producto.nombre}.jpeg" class="section__img--300">
+        <img src="../assets/img/${producto.nombre}.jpeg" class="section__img--300">
         <h4 class="section__h4"><p class="section__titulo">${producto.nombre}</p></h4>
         <div class="section__flex">
             <p class = "card-text">${producto.precio}</p>
@@ -107,7 +107,7 @@ function mostrarCarrito(array){
     for (const producto of array) {
         html =
         `<tr>
-        <td><img src="./assets/img/${producto.nombre}.jpeg" class="section__img--50"></td>
+        <td><img src="../assets/img/${producto.nombre}.jpeg" class="section__img--50"></td>
         <td><h4 ><p class="section__titulo">${producto.nombre}</p></h4></td>
         <td><p class="section__h3">${producto.precio}</p></td>
         <td><p  class="section__h3">Cantidad: <span id="cantidad">${producto.cantidad}</span></p></td>
