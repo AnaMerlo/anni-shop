@@ -84,7 +84,7 @@ function crearHTML(array){
     for (const producto of array) {
         html =
         `<div class="section__div  col-md-3">
-        <img src="../assets/img/${producto.nombre}.jpeg" class="section__img--300">
+        <img src="./assets/img/${producto.nombre}.jpeg" class="section__img--300">
         <h4 class="section__h4"><p class="section__titulo">${producto.nombre}</p></h4>
         <div class="section__flex">
             <p class = "card-text">${producto.precio}</p>
