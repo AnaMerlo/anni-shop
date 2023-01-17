@@ -3,7 +3,8 @@ const form = document.getElementById('miForm');
 const p=document.getElementById('mensaje')
 const tel= document.getElementById('telefono')
 const correo= document.getElementById('correoElectronico');
-
+const dom= document.getElementById('domicilio');
+const localidad=document.getElementById('localidad');
 
 //registro
 
@@ -17,42 +18,44 @@ function validarForm(){
     p.innerText = 'El nombre o el email son válidos';
     }
     else{
-    const nuevoCandidato = new Candidato(nombre.value, tel.value, correo.value);
-    guardarCandidato(nuevoCandidato);
-    guardarEnLS(candidatos);
+    const nuevoCliente = new Cliente(nombre.value, tel.value, correo.value, dom.value, localidad.value);
+    guardarCandidato(nuevoCliente);
+    guardarEnLS(clientes);
     p.innerText = 'Se envio correctamente';
     }
 }
 
 //si hay datos en LS sino []
-let candidatos;
-if(localStorage.getItem('candidatos')){
-    candidatos = JSON.parse(localStorage.getItem('candidatos'));
+let clientes;
+if(localStorage.getItem('clientes')){
+    clientes = JSON.parse(localStorage.getItem('clientes'));
 }
 else{
-    candidatos = [];
+    clientes = [];
 }
 
 //constructor
 
-class Candidato{
+class Cliente{
     constructor(nombre, telefono, email){
     this.nombre = nombre;
     this.telefono = parseInt(telefono);
     this.email = email;
+    this.domicilio = domicilio;
+    this.localidad = localidad;
     }
 }
 
 //guardar candidatos
 
 function guardarCandidato(candidato){
-    return candidatos.push(candidato);
+    return clientes.push(candidato);
 }
 
 //guarde en LS
 
 function guardarEnLS(arr){
-    return localStorage.setItem('candidatos', JSON.stringify(arr))
+    return localStorage.setItem('clientes', JSON.stringify(arr))
 }
 
 //evento
@@ -64,3 +67,6 @@ form.addEventListener('submit', (e)=>{
     
   //localStorage.clear()
 });
+
+
+

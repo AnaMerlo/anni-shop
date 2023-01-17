@@ -106,7 +106,7 @@ function mostrarCarrito(array){
     for (const producto of array) {
         html =
         `<tr>
-        <td><img src="../assets/img/${producto.nombre}.jpeg" class="section__img--50"></td>
+        <td><img src="./assets/img/${producto.nombre}.jpeg" class="section__img--50"></td>
         <td><h4 ><p class="section__titulo">${producto.nombre}</p></h4></td>
         <td><p class="section__h3">${producto.precio}</p></td>
         <td><p  class="section__h3">Cantidad: <span id="cantidad">${producto.cantidad}</span></p></td>
