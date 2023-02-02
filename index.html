@@ -14,17 +14,18 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
     <!-- comienza header -->
     <header class="header">
-        <div class="capa"></div>
-        <div class="d-flex justify-content-end p-4 carrito">
+        <div class="d-flex justify-content-end p-4 carrito" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                 <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
             </svg>
             <span class="p-1" id="contador"></span>
         </div>
+        
         <nav class="navbar navbar-expand-lg bg-black position-relative">
             <div class="container-fluid">
                     <a href="./index.html"><img class="header__img navbar-brand " data-aos="zoom-in-down"  data-aos-duration="1500" src="./assets/img/logo-shop.png" alt="logo de la tienda de ropa"></a>
@@ -56,12 +57,20 @@
         <section class="div">
             <aside class="div__aside ">
                 <label for="search" class="form__label">Buscar productos</label>
-                <input type="search" name="search" id="search">
+                <input type="search" name="search" id="search" class="form__in">
                 <ul class="div__ul">
-                    <li class="header__li categoria-titulo"><a href="#" class="header__a--16" id="blusas">Blusas</a></li>
-                    <li class="header__li categoria-titulo"><a href="#" class="header__a--16" id="vestidos">Vestidos</a></li>
-                    <li class="header__li categoria-titulo"><a href="#" class="header__a--16" id="pantalones">Pantalones</a></li>
-                    <li class="header__li categoria-titulo"><a href="#" class="header__a--16" id="remeras">Remeras</a></li>
+                    <div>
+                        <li class="header__a--16" id="blusa">Blusas</li>
+                    </div>
+                    <div>
+                        <li class="header__a--16" id="vestido">Vestidos</li>
+                    </div>
+                    <div>
+                        <li class="header__a--16" id="remera">Remeras</li>
+                    </div>
+                    <div>
+                        <li class="header__a--16" id="pantalon">Pantalón</li>
+                    </div>
                 </ul>
             </aside>
             <div class="container">
@@ -69,25 +78,33 @@
                 <figure class="figure__grid row " id="catalogo"></figure>
             </div>
         </section>
-            <h1 class="main__h2--55">Realizar compra</h1>
-            <table class="table">
-                <thead >
-                    <tr>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Descripción</th>
-                        <th scope="col">Precio</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Total : $ <span id="total"></span></th>
-                        <th scope="col">Vaciar</th>
-                    </tr>
-                </thead>
-                <tbody id="carrito">
-                    <!-- contenido dinamico -->
-                </tbody>
-            </table>
-            <div class="form__flex" id="finalizar">
-                <button class="btn btn-dark">Finalizar compra</button><!-- contenido dinamico -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+            <h5 class="offcanvas-title form__label" id="offcanvasRightLabel">Mi pedido</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
+            <div class="offcanvas-body p-0 d-flex flex-column">
+                <table class="table">
+                    <thead >
+                        <tr>
+                            <th scope="col" class="fontS">Producto</th>
+                            <th scope="col" class="fontS">Descripción</th>
+                            <th scope="col" class="fontS">Precio</th>
+                            <th scope="col" class="fontS">Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody id="carrito">
+                        <!-- contenido dinamico -->
+                    </tbody>
+                </table>
+                <h2 class="form__label">Total : $ <span id="total"></span></h2>
+                <p id="carritoV"></p>
+                <div class="botones">
+                    <button class="boton"  id="finalizar">Finalizar compra</button><!-- contenido dinamico -->
+                    <button class="boton bg-black" id="vaciar">Vaciar</button>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- termina main -->
     <!-- comienza footer -->
@@ -126,6 +143,7 @@
     <script>
         AOS.init();
     </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="./js/tienda.js"></script>
 </body>
 </html>

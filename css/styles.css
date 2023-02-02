@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -17,13 +19,13 @@
     color: #030555;
 }
 .boton {
-    font-weight: bold;
+    
     border: none;
     padding: 10px;
     border-radius: 3px;
     font-size: 1rem;
-    background-color: #198754b3;
-    color: #212529;
+    background-color: #056;
+    color: white;
     text-align: center;
     position: relative;
     z-index: 1;
@@ -32,13 +34,14 @@
 }
 
 .boton:hover{
-    color: white;
+    color: black;
+    font-weight: bold;
 
 }
 
 .boton::after{
     content: "";
-    background-color: #1d4633b3;
+    background-color: rgba(144, 177, 184, 0.651);
     position: absolute;
     z-index: -1;
     padding: 10px;
@@ -74,10 +77,17 @@
 /* estilos de unite */
 
 .form__label{
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
-    padding: 0.6rem;
+    padding: 0.8rem;
+    font-size: 1.5rem;
 }
-
+.form__in{
+    margin-left: 1rem;
+    border-radius: 1rem;
+    width: 150px;
+    height: 40px;
+}
 .section__h3{
     text-align: center;
     margin-top: 1rem;
@@ -89,22 +99,22 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    margin: 2rem;
+    margin: 1rem;
+}
+
+.botones{
+    gap: 1rem;
+    height: 100%;
+    justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1rem;
 }
 
 /* formulario de CONTACTO */
 
 
-.form__input{
-    width: 100%;
-    border: 1px solid #e6e6e6;
-    font-size: 0.8rem;
-    margin: 5px;
-    padding: 1rem;
-    outline: none;
-    border-radius: 7px;
-    background-color: rgba(255, 255, 255, 0.664);
-}
 form input[type="submit"], form input[type="reset"] {
     width: 110px;
     height: 40px;
@@ -129,13 +139,18 @@ form input[type="submit"], form input[type="reset"] {
     width: 250px;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding-left: 2rem;
     align-items: flex-start;
     gap: 1rem;
 }
 
 .div__ul{
-    padding-left: 0
+    padding-left: 1rem;
+}
+
+.active{
+    font-weight: bold;
+    color: #056;
 }
 
 .header__li{
@@ -144,19 +159,22 @@ form input[type="submit"], form input[type="reset"] {
 }
 
 .header__a--16{
-    color: brown;
-    font-weight: bold;
+    /* color: black; */
     font-size: 1rem;
     text-decoration: none;
+    padding: 0.5rem;
+    list-style: none;
+
 }
 .header__a--16:hover{
-    text-decoration: underline 2px rgba(124, 57, 57, 0.527);
-    font-weight: 200;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 .figure__grid{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    gap: 2rem;
 }
 
 .section__div{
@@ -164,6 +182,7 @@ form input[type="submit"], form input[type="reset"] {
     width: 300px;
     margin: 20px;
     text-align: center;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 8%);
 }
 
 .section__img--300{
@@ -175,8 +194,7 @@ form input[type="submit"], form input[type="reset"] {
 }
 
 .section__img--50{
-    width: 50%;
-    height: 300px;
+    width: 60px;
     border-radius: 10px;
 
 }
@@ -203,7 +221,8 @@ thead{
 .header__img{
     width: 140px;
     height: 140px;
-    border: 2px solid white;
+    border: 1px;
+    border-radius: 68px;
 }
 .header__ul{
     display: flex;
@@ -221,6 +240,10 @@ thead{
     background-color: transparent;
     font-weight: 600;
     text-shadow: 1px 1px black;
+}
+.header__a:hover{
+    cursor: pointer;
+    color: #056;
 }
 .slider{
     width: 100vw;
@@ -272,7 +295,7 @@ thead{
     font-size: 0.8rem;
     text-decoration: none;
     position: fixed;
-    right: -100px;
+    right: -108px;
     bottom: 25px;
     border-radius: 15px;
     width: 140px;
@@ -301,4 +324,154 @@ thead{
     70%{margin-left: -300%;}
     100%{margin-left: -300%;}
 
+}
+.altura{
+    margin: 40%;
+}
+
+/* footer */
+
+.footer{
+    height: 300px;
+    background-color: black;
+}
+.footer__p{
+    font-size: 30px;
+    font-family: "PT Serif", serif;
+    color: white;
+    height: 70px;
+    min-width: 200px;
+    text-align: center;
+    padding-top: 28px;
+}
+.footer__p--20{
+    font-size: 20px;
+    font-family: "Playfair Display",serif;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+}
+.footer__nav{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.nav__redes{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-content: space-around;
+}
+.nav__a{
+    padding: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+.footer__div{
+    color: #fbfbfb82;
+    width: 100%;
+    padding-top: 20px;
+}
+.footer__final{
+    font-size: 1rem;
+    font-family: "Montserrat",sans-serif;
+    text-align: center;
+}
+.footer__hr{
+    border-top: 1px solid white;
+    opacity: unset;
+    margin: 0rem 200px;
+}
+/* utilitarias */
+.mg{
+    margin-top: 3rem;
+}
+.btn__continuar{
+    width: 200px;
+    height: 40px;
+    padding: 5px;
+    color: white;
+    background-color: #000;
+    font-weight: bold;
+}
+.marco{
+    border: 2px solid rgb(136, 128, 128);
+}
+.borde{
+    border-radius: 5px;
+    border: #000 solid 1px;
+    width: 30px;
+}
+.wd{
+    width: 50px;
+}
+.w-auto{
+    width: auto;
+}
+
+
+/* formulario */
+
+.form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    height: 650px;
+    padding: 10px;
+}
+
+form input {
+    width: 100%;
+    border: 1px solid #e6e6e6;
+    font-size: 0.8rem;
+    padding: 1rem;
+    outline: none;
+    border-radius: 7px;
+}
+
+/* las media queries para mobile y tablet*/
+
+
+@media screen and (max-width: 768px) {
+    .carrito{
+        right: 67vw;
+    }
+    .figure__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+    }
+    .div__aside{
+        display: none;
+    }
+}
+@media screen and (max-width: 320px){
+    .header__img{
+        width: 90px;
+        height: 90px;
+    }
+    
+    .carrito{
+        right: 50vw;
+    }
+    .slider{
+        height: auto;
+    }
+    .form{
+        width: auto;
+        height: auto;
+        justify-content: none;
+    }
+    .w-50{
+        width: auto!important;
+    }
+    .m-5{
+        margin: auto!important;
+    }
+    .fontS{
+        font-size: 0.7rem;
+    }
 }

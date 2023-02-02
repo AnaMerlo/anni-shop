@@ -1,0 +1,90 @@
+[
+    {
+        "id":1,
+        "nombre":"Vestido Bordo",
+        "precio":4500,
+        "cantidad":1,
+        "categoria":"vestido",
+        "img":"Vestido Bordo.jpeg"
+    },
+    {
+        "id":2,
+        "nombre":"Vestido con lunares",
+        "precio":8000,
+        "cantidad":1,
+        "categoria":"vestido",
+        "img":"Vestido con lunares.jpeg"
+    },
+    {
+        "id":3,
+        "nombre":"Vestido",
+        "precio":7000,
+        "cantidad":1,
+        "categoria":"vestido",
+        "img":"Vestido.jpeg"
+    },
+    {
+        "id":4,
+        "nombre":"Blusa",
+        "precio":3000,
+        "cantidad":1,
+        "categoria":"blusa",
+        "img":"Blusa.jpeg"
+    },
+    {
+        "id":5,
+        "nombre":"Blusa Rosa",
+        "precio":3500,
+        "cantidad":1,
+        "categoria":"blusa",
+        "img":"Blusa Rosa.jpeg"
+    },
+    {
+        "id":6,
+        "nombre":"Buzo Friends",
+        "precio":8000,
+        "cantidad":1,
+        "categoria":"buzo",
+        "img":"Buzo Friends.jpeg"
+    },
+    {
+        "id":7,
+        "nombre":"Buzo",
+        "precio":7500,
+        "cantidad":1,
+        "categoria":"buzo",
+        "img":"Buzo.jpeg"
+    },
+    {
+        "id":8,
+        "nombre":"Pantalon Jean",
+        "precio":10000,
+        "cantidad":1,
+        "categoria":"pantalon",
+        "img":"Pantalon Jean.jpeg"
+    },
+    {
+        "id":9,
+        "nombre":"Pantalon",
+        "precio":9000,
+        "cantidad":1,
+        "categoria":"pantalon",
+        "img":"Pantalon Negro.jpeg"
+    },
+    {
+        "id":10,
+        "nombre":"Remera Stranger things",
+        "precio":4000,
+        "cantidad":1,
+        "categoria":"remera",
+        "img":"Remera ST.jpeg"
+    },
+    {
+        "id":11,
+        "nombre":"Remera Star Wars",
+        "precio":4500,
+        "cantidad":1,
+        "categoria":"remera",
+        "img":"Remera SW.jpeg"
+    }
+]

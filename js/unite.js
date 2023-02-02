@@ -1,3 +1,4 @@
+//VARIABLES
 const nombre = document.getElementById('nombreApellido')
 const form = document.getElementById('miForm');
 const p=document.getElementById('mensaje')
@@ -5,11 +6,11 @@ const tel= document.getElementById('telefono')
 const correo= document.getElementById('correoElectronico');
 
 
-//registro
+
+let candidatos = JSON.parse(localStorage.getItem('candidatos')) || [];
 
 
-
-//valido el ingreso del nombre que tenga espacio y sea alfabetico
+//VALIDACION DE NOMBRE Y CORREO
 
 function validarForm(){
     if(!/^[a-zA-Z\s]+$/.test(nombre.value) || (!/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(correo.value))){
@@ -24,14 +25,7 @@ function validarForm(){
     }
 }
 
-//si hay datos en LS sino []
-let candidatos;
-if(localStorage.getItem('candidatos')){
-    candidatos = JSON.parse(localStorage.getItem('candidatos'));
-}
-else{
-    candidatos = [];
-}
+
 
 //constructor
 
@@ -61,6 +55,5 @@ form.addEventListener('submit', (e)=>{
     e.preventDefault();
     validarForm();
     form.reset();
-    
-  //localStorage.clear()
+    //localStorage.clear()
 });
