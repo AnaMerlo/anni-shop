@@ -49,7 +49,7 @@ fetch('./data/data.json')
                     const seAgrega = catalogoProductos.find((el)=> el.id === producto);
                     carrito.push(seAgrega);
                     if(carrito.length >= 1){
-                        carritoV.innerHTML = " "
+                        carritoVacio.innerHTML = " "
                     }
                 }
                 guardarEnLS(carrito)
@@ -72,8 +72,9 @@ fetch('./data/data.json')
             }
         }) 
     }
-    //MUESTRO EL FILTRO POR EL DOM
     mostrarCarrito(carrito)
+    
+    //MUESTRO EL FILTRO POR EL DOM
     search.addEventListener('input', ()=>{
         let newFiltro = buscadorCategorias(catalogoProductos, search.value);
         crearHTML(newFiltro)
@@ -120,7 +121,7 @@ function mostrarCarrito(array){
     borrarCarrito(array)
     contador.innerText = carrito.length
     precioTotal.innerHTML = carrito.reduce((acc, el) => acc + el.precio * el.cantidad, 0);
-    
+
 }
 
 
@@ -170,6 +171,9 @@ function buscadorCategorias(arr, filtro){
 fin.addEventListener('click', ()=>{
     if(carrito.length >= 1){
         window.location.href = "./pages/finalizar_compra.html";
+        carrito = [];
+        mostrarCarrito(carrito)
+        guardarEnLS(carrito)
     }else {
         carritoVacio.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-cart-x altura" viewBox="0 0 16 16">
         <path d="M7.354 5.646a.5.5 0 1 0-.708.708L7.793 7.5 6.646 8.646a.5.5 0 1 0 .708.708L8.5 8.207l1.146 1.147a.5.5 0 0 0 .708-.708L9.207 7.5l1.147-1.146a.5.5 0 0 0-.708-.708L8.5 6.793 7.354 5.646z"/>

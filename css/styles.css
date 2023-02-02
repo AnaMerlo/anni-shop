@@ -187,10 +187,7 @@ form input[type="submit"], form input[type="reset"] {
 
 .section__img--300{
     width: 100%;
-    height: 300px;
     border-radius: 10px;
-    cursor: pointer
-    
 }
 
 .section__img--50{
@@ -455,7 +452,7 @@ form input {
     }
     
     .carrito{
-        right: 50vw;
+        right: 43vw;
     }
     .slider{
         height: auto;
@@ -473,5 +470,8 @@ form input {
     }
     .fontS{
         font-size: 0.7rem;
+    }
+    .main__h2--55 {
+        padding: 3rem;
     }
 }
